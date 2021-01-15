@@ -5,6 +5,13 @@ const addNote = (title, body) => {
   const notes = loadNotes();
   const duplicateNote = notes.find((note) => note.title === title);
 
+  // Run inspector:
+  // node inspect app.js add --title="debugger test" --body="body text"
+  // If the first cmd fails:
+  // node --inspect-brk app.js add --title="debugger test" --body="body text"
+  // In browser: chrome://inspect
+  debugger;
+
   if (!duplicateNote) {
     notes.push({
       title: title,
