@@ -42,8 +42,22 @@ app.get("/help", (req, res) => {
   });
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    errorMessage: "Help article not found!",
+  });
+});
+
 app.get("/weather", (req, res) => {
   res.send("Weather page");
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    errorMessage: "Page not found!",
+  });
 });
 
 app.listen(PORT, () => {
