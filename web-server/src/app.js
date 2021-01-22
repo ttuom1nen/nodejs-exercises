@@ -53,6 +53,19 @@ app.get("/weather", (req, res) => {
   res.send("Weather page");
 });
 
+// Query string param example /products?search=""
+app.get("/products", (req, res) => {
+  if (!req.query.search) {
+    return res.send({
+      error: "You must provide a search term",
+    });
+  }
+
+  res.send({
+    products: [],
+  });
+});
+
 app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
