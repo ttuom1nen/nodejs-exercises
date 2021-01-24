@@ -6,9 +6,19 @@
     <title>Weather app</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/app.js"></script>
+    
   </head>
   <body>
     {{>header}}
+
+    <form>
+      <input type="text" placeholder="Enter a location" />
+      <button type="submit">Search</button>
+    </form>
+
+    <p id="msg-1"></p>
+    <p id="msg-2"></p>
+    
+    <script src="/js/app.js"></script>
   </body>
 </html>
