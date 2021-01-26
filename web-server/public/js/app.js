@@ -8,6 +8,8 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const location = search.value;
+  firstMsg.innerText = "Loading...";
+  secondMsg.innerText = "";
 
   fetchWearherData(location);
 });
@@ -18,6 +20,7 @@ const fetchWearherData = async (address) => {
 
   if (data.error) {
     console.log(data.error);
+    firstMsg.innerText = data.error;
   } else {
     console.log(data);
     firstMsg.innerText = data.location;
